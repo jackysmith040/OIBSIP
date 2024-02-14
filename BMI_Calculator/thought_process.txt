@@ -1,0 +1,131 @@
+BMI CALCULATOR
+
+
+THOUGHT PROCESS
+
+Input:
+    - weight in kilogram
+    - height in meters
+
+Output:
+    - Your body mass index aka BMI
+
+Format:
+    - Based on the bmi numerical value you should be place in a category
+
+    Category:
+        - Underweight
+        - Normal
+        - Overweight
+
+    
+GENERAL PLAN
+
+Variables:
+    - user_weight: real number
+    - user_height: real number
+
+    Specifics:
+        - user_weight| should be in kilogram
+        - user_height| should be in meters
+
+- Ask the user for their height and weight
+- make sure the Variables are in their right data type ie. real numbers
+
+~ Error Handling:
+    - make sure the values are all positive real numbers.
+
+
+-- function  
+    compute_bmi(weight, height):
+        comment:
+            | Computes the Body Mass Index (BMI) using the standard formula.
+            | The weight parameter represents the user's weight in kilograms.
+            | The height parameter represents the user's height in meters.
+            | The function returns the calculated BMI as a floating-point number.
+            | Ensure that both parameters are positive real numbers.
+            | Handle cases where the input is not valid, such as negative values or non-numeric input.
+        
+        - use the standard formula for the conversion
+        - save the result in a `bmi_index` variable
+        return bmi_index
+
+
+    category_bmi(bmi_index):
+        comment:
+            | Determines the BMI category based on the given BMI index.
+            | The bmi_index parameter is the computed BMI value.
+            | The function uses predefined BMI ranges to assign categories.
+            | Returns the category as a string (e.g., "Underweight", "Normal", "Overweight").
+            | Ensure that the bmi_index is a valid positive real number.
+        
+        - use the standard category for bmi indexes
+        - store the category in a dictionary `category_index`
+        - if the bmi_index value falls within the range:
+        - it's corresponding category will be assigned to a variable `category`
+        return category
+
+
+
+    display_bmi(category):
+        comment:
+            | Displays the BMI result to the user in a clear and friendly format.
+            | The category parameter is the determined BMI category.
+            | Uses f-strings for formatting the output message.
+            | Prints the result to the console.
+            | Ensure that the category is a valid string value.
+        
+        - use a very nice way of displaying the text
+        - use f-strings to make the pretty format nicer
+        - print the result
+
+-- main function
+    - Ask the user for their height and weight
+    - make sure the Variables are in their right data type ie. real numbers
+
+    - bmi_index = compute_bmi(user_weight, user_height)
+    - category = category_bmi(bmi_index)
+    - display_bmi(category)
+
+
+BRAIN STORM SECTION
+-------------------
+
+Input:
+- Clearly defined as weight in kilograms and height in meters.
+
+Output:
+- Well-defined as BMI and corresponding category.
+
+Format:
+- Straightforward and user-friendly.
+
+General Plan:
+- Logical sequence of steps for user interaction and calculation.
+
+Variables:
+- Appropriately named and typed as real numbers.
+
+Error Handling:
+- Ensure that the values are all positive real numbers.
+
+Functions:
+- Logically organized and named according to purpose.
+- Detailed comments within functions for clarity.
+
+Main Function:
+- Solid flow of calling necessary functions in sequence.
+
+Improvements:
+- Consider implementing a loop for retrying input if the user enters invalid data.
+- Decide whether to use a GUI or command-line interface for user input.
+
+Feedback:
+- Your plan is comprehensive and covers all the key points needed for a BMI calculator. Keep up the good work!
+
+
+
+
+
+
+

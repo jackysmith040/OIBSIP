@@ -1,0 +1,137 @@
+IDEA: random password generator
+
+
+OVERVIEW:
+    - generates random passwords based on certain criteria.
+    Criteria:
+        - length of password
+        - character types that is whether the user wants letters only, numbers only, symbols only or a mixture
+    - So basically the user decides what the password should be made of
+
+
+THOUGHT PROCESS:
+
+    Inputs:
+        - length of password
+        - character types ie. letters, numbers, symbols
+
+        ~ Error handling:
+            - length must be a positive integer.
+            - the character types should be in lower case
+            - the user should be given another chance to correct the error until the user meets the error-free requirements above
+
+    Logical Part:
+        password output:
+            - can include capital letters
+
+        character types:
+            - if the user doesnt specify anything the password should just generate the random password including all the datatypes.
+            - if the user types 'all' it should also just generate the random password including all the datatypes.
+            - the character type that the user would specify would be excluded when generating the password. 
+            ie. not be displayed when generating the random password
+
+            Example:
+                Sample Scenerios:
+                    1:
+                        - length: 8
+                        - exclude: no input or 'all'
+                        - password -> qenW12#$
+                    2:
+                        - length: 8
+                        - exclude:'letters'
+                        - password -> 65#?12#$
+                    3:
+                        - length: 5
+                        - exclude: 'symbols'
+                        - password -> iu23H
+                    4:
+                        - length: 10
+                        - exclude: 'numbers symbols'
+                        - password -> uKwjSNdpoL
+    Output:
+       ' ______________________PASSWORD GENERATOR________________________________'
+
+       ' Please enter the length:'
+        'What should I exclude? :'
+
+        'Password --->' `random password`
+
+
+
+GENERAL PLAN:
+
+    Variables:
+    - password_length: integer 
+    - exclude_type: string
+    - passcode: string
+
+    Specifics:
+        - password_length | should positive
+        - exclude_type | should lower cased when being inputted
+        - passcode | the final output that contains the random password
+
+- Ask the user for their password_length and exclude_type
+- make sure the `Variables` are in their right data type and `Specifics`
+
+~ Error handling:
+    - length must be a positive integer.
+    - the character types should be in lower case
+    - the user should be given another chance to correct the error until the user meets the error-free requirements above
+
+
+
+-- function 
+    exclude_types(exclude_type):
+        comment:
+            | Excludes the character type as specified in the parameter.
+    
+        - if `exclude_type` has the words 'all' or is empty:
+            - generate the randomly without removing anything
+          else:
+            - when combining the character types it makes sure to remove the `exclude_type` character type
+        - endif
+        - save the result in a `excluded` variable
+        return `excluded`
+
+
+    passcode_length(password_length):
+        comment:
+            | Makes sure the password has a specified length as contained in `passcode_length` parameter.
+        
+        - if password_length > 0:
+            - for loop the same number times as the passcode_length:
+                - temp_passcode = exclude_types(exclude_type)
+                - passcode = passcode + temp_passcode
+            - endfor
+          else:
+            - error message | a simple user friendly error message
+        - endif
+
+        return `passcode`
+
+-- main function
+    - Display:
+        ' ______________________PASSWORD GENERATOR________________________________'
+
+    - Ask the user for their password_length and exclude_type.
+    - Format of Input:
+        'Please enter the length:' | input for password_length
+        'What should I exclude? :' | input for exclude_type
+
+    - make sure the `Variables` are in their right data type and `Specifics`
+
+    ~ Error handling:
+        - length must be a positive integer.
+        - the character types should be in lower case
+        - the user should be given another chance to correct the error until the user meets the error-free requirements above
+
+    - excluded =  exclude_types(exclude_type)
+    - passcode = passcode_length(password_length)
+    
+    - Display:
+        'Password --->' passcode
+
+
+
+
+

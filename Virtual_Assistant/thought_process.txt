@@ -1,0 +1,137 @@
+Project
+
+Aim: Plan and develop a virtual assistant that can carry out simple instructions.
+Instructions:
+    - Speech Recognition
+    - Can speak
+    - tell time
+    - Basic search
+    - youtube
+
+Algorithm:
+
+1. **Speech Recognition:**
+   - Use the `SpeechRecognition` library, which is a full-featured and easy-to-use Python speech recognition library [0].
+   - Install the library using pip: `pip install SpeechRecognition`.
+   - If you plan to use microphone input, you'll also need `PyAudio`, which can be installed via pip: `pip install pyaudio` [1].
+   - Implement a function to listen to the user's voice and convert it to text.
+
+2. **Text Processing and Command Interpretation:**
+   - Once the speech is converted to text, process the text to extract commands.
+   - Use Natural Language Processing (NLP) techniques to understand the user's intent.
+
+3. **Can Speak:**
+   - Use the `pyttsx3` library for text-to-speech conversion.
+   - Install the library using pip: `pip install pyttsx3`.
+   - Implement a function to convert text responses to spoken words.
+
+4. **Tell Time:**
+   - Use the `datetime` module in Python to get the current time.
+   - Implement a function that returns the current time when the assistant receives a command to "tell time".
+
+5. **Basic Search:**
+   - For general web searches, use the `googlesearch-python` library.
+   - Install the library using pip: `pip install pywhatkit`.
+   - Implement a function that takes a query string and returns search results.
+
+6. **YouTube Search:**
+   - For YouTube searches, use the `pytube` library.
+   - Install the library using pip: `pip install pywhatkit`.
+   - Implement a function that takes a query string and returns YouTube video URLs.
+
+7. **Main Loop:**
+   - Create a main loop where the assistant listens for commands, processes them, and responds accordingly.
+   - Continuously monitor for commands until the program is stopped.
+
+Remember to handle exceptions and edge cases to ensure the assistant operates smoothly.
+
+
+`Pseudo-Language`
+`python`
+
+import SpeechRecognition
+import pyttsx3
+import pywhatkit
+import time
+import datetime
+
+
+# a dictionary with common commands as keywords and a nice cool response as a value
+- common commands as keywords
+- nice cool response as a value
+eg. command_list = {'youtube': 'Relax and chill, opening youtube'}
+- add commands based on the number of features available specified in the pseudolanguage
+
+# tells time
+def say_time:
+   - can tell the current time
+   - prints the time
+   - says the time using the `say_this` function
+
+def say_commands:
+   - prints a list of commands from the command_list dictionary
+   - says the list using the `say_this` function
+
+def perform_commands(possible_commands):
+   - takes the values from the listen_for_commands function and stores it in a text variable
+   - checks to see if the keywords in the possible_commands are in the text variable
+      - perform the corresponding action
+      - print the action being performed
+      - use say_this function to speak
+   -for youtube videos and search use the pywhatkit library
+   - add more features and add it's keyword and value to the command_list:
+      - screenshot
+      - increase or decrease volume
+      - shutdown the computer
+      - restart the computer
+      - sleep the computer
+      - greeting
+
+
+
+# Speech Recognition Section 
+
+def listen_for_commands:
+   # uses the SpeechRecognition methods to listen
+   - use methods in SpeechRecognition library to listen and get voice;
+
+   # transpiles the voice to text
+   - convert the voice into text 
+   - print the text
+
+   # saves the text
+   - save the text into a `text` variable
+
+   returns text 
+
+# Text to speach and Speaks
+
+def say_this(text):
+   # Pseudo-Language for say_this Function
+
+   # Initialize the text-to-speech engine
+   - Call 'pyttsx3.init()' to create an instance of the text-to-speech engine.
+
+   # Get the list of available voices
+   - Retrieve the list of voices using 'engine.getProperty('voices')'.
+
+   # Set the voice
+   - Choose the second voice from the list using 'voices[1].id' and apply it with 'engine.setProperty('voice', voices[1].id)'.
+
+   # Set the speaking rate
+   - Adjust the speaking rate to  160 words per minute with 'engine.setProperty('rate',  160)'.
+
+   # Set the volume level
+   - Set the volume to maximum with 'engine.setProperty('volume',  1.0)'.
+
+   # Speak the text
+   - Pass the text to be spoken to 'engine.say(text)'.
+
+   # Wait for the speech to finish
+   - Call 'engine.runAndWait()' to wait for the speech to complete.
+
+   # Stop the engine
+   - Terminate the engine with 'engine.stop()'.
+
+   # Return nothing
+   - End the function with 'return None'.
