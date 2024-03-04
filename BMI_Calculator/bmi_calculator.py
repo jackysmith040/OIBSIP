@@ -1,3 +1,8 @@
+"""
+date: 14th February 2024
+@author: fafali
+"""
+
 def compute_bmi(weight, height):
     """
     Computes the Body Mass Index (BMI) using the standard formula.

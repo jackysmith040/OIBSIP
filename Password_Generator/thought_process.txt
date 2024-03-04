@@ -124,9 +124,7 @@ GENERAL PLAN:
         - length must be a positive integer.
         - the character types should be in lower case
         - the user should be given another chance to correct the error until the user meets the error-free requirements above
-
-    - excluded =  exclude_types(exclude_type)
-    - passcode = passcode_length(password_length)
+    - passcode = exclude_types(exclude_type, password_length)
     
     - Display:
         'Password --->' passcode

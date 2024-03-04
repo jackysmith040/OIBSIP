@@ -1,0 +1,107 @@
+Take a city name as required input
+Take an optional flag to display the output in Fahrenheit instead of Celsius, if desired
+Call an online weather API to fetch the weather data
+Display the city name, the current weather conditions, and the current temperature
+Format the output visually using colors, spacing, and emojis
+
+WEATHER APP
+
+
+THOUGHT PROCESS
+
+Input:
+    - city name 
+
+Output:
+    - city name
+    - current weather condition
+    - current temperature
+    - current humidity
+
+    
+GENERAL PLAN
+
+Variables:
+    - city_name: string
+    - weather_url: string
+    - weather_condition
+    - weather_temperature
+    - weather_humidity
+
+
+- Ask the user for the city name
+- make sure the `Variables` are in their right data type ie. string 
+- `Variables` should be in lower case
+
+Requests:
+    - send a request to the `weather_url` 
+    - get the json 
+    - get the neceesary information from the json;
+        information:
+            - city name
+            - current weather condition
+            - current temperature
+            - current humidity
+
+~ Error Handling:
+    - make sure the `city_name` is in lower case and a string
+    - handle the request error 
+    - make sure the request of json file is valid
+
+-- function  
+    get_weather_info(city_name):
+        comment:
+            | sends request to the api url
+            | gets the json file
+            | gets the neceesary weather information from the json
+
+        - send a request to the `weather_url` 
+        - get the json 
+        - get the neceesary information from the json;
+            information:
+                - city name
+                - current weather condition
+                - current temperature
+                - current humidity
+        
+        - save it in the dictionary `weather_feedback`
+            - `weather_feedback` = {
+                'weather condition': weather_condition,
+                'temperature': weather_temperature,
+                'humidity': weather_humidity
+            }
+
+        return weather_feedback
+
+
+    display_weather(weather_feedback):
+        comment:
+            | use emoji that corresponds to the weather_temperature
+            | Nice alignment
+        
+        - use a very nice way of displaying the text
+        - use f-strings to make the pretty format nicer
+        - print the result
+
+        Format example:
+            1:
+                New York | \sunny_emoji ==> temperature
+                Weather condition | \summer_coat_emoji ==> " it will be sunny "
+            
+            2:
+                Kumasi in Ghana | \rain_emoji ==> temperature
+                Weather condition | \raincoat_emoji ==> " it will be sunny "
+
+
+-- main function:
+    - Ask the user for the city name
+    - make sure the `Variables` are in their right data type ie. string 
+    - `Variables` should be in lower case
+
+    ~ Error Handling:
+        - make sure the `city_name` is in lower case and a string
+        - handle the request error 
+        - make sure the request of json file is valid
+
+    weather_feedback = get_weather_info(city_name)
+    display_weather(weather_feedback)
