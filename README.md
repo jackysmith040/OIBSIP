@@ -67,4 +67,12 @@ To use the BMI Calculator, simply execute the `bmi_calculator.py` script in your
 
 Ensure you have Python installed on your system. If you encounter any issues, check the input values and try again.
 
-Enjoy your health insights with our BMI Calculator!
+Enjoy your health insights with my BMI Calculator!
+
+# Password Generator
+
+The Password Generator is a Python script that allows users to generate secure passwords. It offers the flexibility to exclude certain character types (letters, numbers, symbols) from the generated password, ensuring a customized password that meets specific security requirements.
+
+# Weather App
+
+The Weather App is a command-line interface (CLI) application that fetches and displays weather information for a specified city. It utilizes the OpenWeatherMap API to retrieve weather data, including the current weather condition, temperature, and more.
