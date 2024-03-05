@@ -2,7 +2,7 @@ Take a city name as required input
 Take an optional flag to display the output in Fahrenheit instead of Celsius, if desired
 Call an online weather API to fetch the weather data
 Display the city name, the current weather conditions, and the current temperature
-Format the output visually using colors, spacing, and emojis
+Format the output visually using colors, spacing, and emojis {optional}
 
 WEATHER APP
 
@@ -36,7 +36,7 @@ Variables:
 Requests:
     - send a request to the `weather_url` 
     - get the json 
-    - get the neceesary information from the json;
+    - get the necessary information from the json;
         information:
             - city name
             - current weather condition

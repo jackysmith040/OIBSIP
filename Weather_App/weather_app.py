@@ -1,3 +1,8 @@
+"""
+programme: Weather
+date: 14th February 2024
+@author: fafali
+"""
 
 import requests
 
@@ -35,3 +40,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
+    

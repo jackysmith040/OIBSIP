@@ -1,9 +1,8 @@
 """
+programme: Virtual Assistant
 date: 14th February 2024
 @author: fafali
 """
-
-
 
 import speech_recognition as sr
 import pyttsx3
@@ -77,14 +76,16 @@ class VirtualAssistant:
     def say_time(self):
         current_time = datetime.datetime.now().strftime("%H:%M")
         message = f"{self.command_list.get_commands()['time']} {current_time}"
-        self.speech_engine.say(message)
         print(message)
+        self.speech_engine.say(message)
+        
 
     def say_commands(self):
         commands = ', '.join(self.command_list.get_commands().keys())
         message = f"{self.command_list.get_commands()['commands']}: {commands}"
-        self.speech_engine.say(message)
         print(message)
+        self.speech_engine.say(message)
+        
 
     def take_screenshot(self):
         screenshot = pyautogui.screenshot()
@@ -97,68 +98,75 @@ class VirtualAssistant:
     def increase_volume(self):
         pyautogui.press('volumeup')
         message = 'Volume increased.'
-        self.speech_engine.say(message)
         print(message)
+        self.speech_engine.say(message)
+        
 
     def decrease_volume(self):
         pyautogui.press('volumedown')
         message = 'Volume decreased.'
-        self.speech_engine.say(message)
         print(message)
+        self.speech_engine.say(message)
+        
 
     def schedule_shutdown(self):
         pwk.shutdown(20)
         message = 'Shutdown scheduled.'
-        self.speech_engine.say(message)
         print(message)
+        self.speech_engine.say(message)
+        
 
     def cancel_shutdown(self):
         pwk.cancel_shutdown()
         message = 'Shutdown canceled.'
-        self.speech_engine.say(message)
         print(message)
+        self.speech_engine.say(message)
+        
 
     def restart_computer(self):
         os.system('shutdown /r /t   1')
         message = 'Computer restarting.'
-        self.speech_engine.say(message)
         print(message)
+        self.speech_engine.say(message)
+        
 
     def put_computer_to_sleep(self):
         os.system("rundll32.exe powrprof.dll,SetSuspendState   0,1,0")
         message = 'Computer going to sleep.'
-        self.speech_engine.say(message)
         print(message)
+        self.speech_engine.say(message)
+        
 
     def greet_user(self):
         message = self.command_list.get_commands()['greeting']
-        self.speech_engine.say(message)
         print(message)
+        self.speech_engine.say(message)
+        
 
     def perform_wiki_search(self, query):
         info = pwk.info(query,   3, True)
         message = f'Searching Wikipedia for "{query}"'
         self.speech_engine.say(message)
         print(message)
-        self.speech_engine.say(info)
         print(info)
         print('Network so it might take some time....')
+        self.speech_engine.say(info)
         sleep(12)
 
     def perform_youtube_search(self, query):
         pwk.playonyt(query)
         message = f'Searching YouTube for "{query}"'
-        self.speech_engine.say(message)
         print(message)
         print('Network so it might take some time....')
+        self.speech_engine.say(message)
         sleep(12)
 
     def perform_web_search(self, query):
         pwk.search(query)
         message = f'Searching the web for "{query}"'
-        self.speech_engine.say(message)
         print(message)
         print('Network so it might take some time....')
+        self.speech_engine.say(message)
         sleep(12)
 
     
@@ -189,21 +197,21 @@ class VirtualAssistant:
 
     def run(self):
         while True:
-            print('Listening, please speak louder')
+            print('Listening, please speak louder\n')
             self.speech_engine.say('Listening, please speak louder')
             command = self.listen_for_commands()
             if command:
                 if 'exit' in command or 'stop' in command:
-                    print('Goodbye, thank you for your time and patience. Love you')
+                    print('\nGoodbye, thank you for your time and patience. Love you')
                     self.speech_engine.say('Goodbye, thank you for your time and patience. Love you')
                     break
                 else:
                     self.perform_commands(command)
-                    sleep(6)
-                    print('Done. How can I help you today?')
+                    sleep(4)
+                    print('\nDone. How can I help you today?\n\n')
                     self.speech_engine.say('Done. How can I help you today?')
             else:
-                print('Sorry cant hear.  Please speak clearly')
+                print('\nSorry cant hear.  Please speak clearly\n')
                 self.speech_engine.say('Sorry, I couldn\'t hear you. Please speak clearly.')
                 sleep(2)
 
