@@ -1,5 +1,5 @@
 """
-programme: Weather
+programme: Weather CLI App
 date: 14th February 2024
 @author: fafali
 """
